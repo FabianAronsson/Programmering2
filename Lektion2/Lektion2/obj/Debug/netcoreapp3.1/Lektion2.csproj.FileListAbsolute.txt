@@ -1,0 +1,12 @@
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\obj\Debug\netcoreapp3.1\Lektion2.AssemblyInfoInputs.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\obj\Debug\netcoreapp3.1\Lektion2.AssemblyInfo.cs
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\obj\Debug\netcoreapp3.1\Lektion2.csproj.CoreCompileInputs.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\bin\Debug\netcoreapp3.1\Lektion2.exe
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\bin\Debug\netcoreapp3.1\Lektion2.deps.json
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\bin\Debug\netcoreapp3.1\Lektion2.runtimeconfig.json
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\bin\Debug\netcoreapp3.1\Lektion2.runtimeconfig.dev.json
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\bin\Debug\netcoreapp3.1\Lektion2.dll
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\bin\Debug\netcoreapp3.1\Lektion2.pdb
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\obj\Debug\netcoreapp3.1\Lektion2.dll
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\obj\Debug\netcoreapp3.1\Lektion2.pdb
+D:\Skrivbord\Mapp\GitHub\Programmering2\Lektion2\Lektion2\obj\Debug\netcoreapp3.1\Lektion2.genruntimeconfig.cache

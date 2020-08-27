@@ -11,3 +11,16 @@ C:\Users\fabian.aronsson1\Desktop\Skola\Github\Programmering2\HelloWorld\HelloWo
 C:\Users\fabian.aronsson1\Desktop\Skola\Github\Programmering2\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.dll
 C:\Users\fabian.aronsson1\Desktop\Skola\Github\Programmering2\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.pdb
 C:\Users\fabian.aronsson1\Desktop\Skola\Github\Programmering2\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.genruntimeconfig.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.exe
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.deps.json
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.runtimeconfig.json
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.runtimeconfig.dev.json
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.dll
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.pdb
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.csprojAssemblyReference.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.AssemblyInfoInputs.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.AssemblyInfo.cs
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.csproj.CoreCompileInputs.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.dll
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.pdb
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.genruntimeconfig.cache

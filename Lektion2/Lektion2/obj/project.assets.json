@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
-      "projectName": "HelloWorld",
-      "projectPath": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
+      "projectUniqueName": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\Lektion2\\Lektion2\\Lektion2.csproj",
+      "projectName": "Lektion2",
+      "projectPath": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\Lektion2\\Lektion2\\Lektion2.csproj",
       "packagesPath": "C:\\Users\\Kingen34\\.nuget\\packages\\",
-      "outputPath": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\HelloWorld\\HelloWorld\\obj\\",
+      "outputPath": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\Lektion2\\Lektion2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kingen34\\AppData\\Roaming\\NuGet\\NuGet.Config",

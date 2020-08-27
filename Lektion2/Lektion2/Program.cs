@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace HelloWorld
+namespace Lektion2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Niklas!");
+            Console.WriteLine("Din ålder är " + Console.ReadLine());
         }
     }
 }
