@@ -9,6 +9,9 @@ namespace HelloWorld
             var living = "";
             var check = true;
             var age = 0;
+            var answer = "";
+            var number1 = 0;
+            var number2 = 0;
 
             while (check)
             {
@@ -24,7 +27,8 @@ namespace HelloWorld
                     check = false;
                 }
 
-            } check = true;
+            }
+            check = true;
 
             Console.WriteLine("Vad heter du?:");
             var name = Console.ReadLine();
@@ -50,9 +54,33 @@ namespace HelloWorld
                 }
             }
 
-            Console.WriteLine("Ålder: " + age + "\n" + 
-                "Namn: " + name + "\n" 
+            Console.WriteLine("Ålder: " + age + "\n" +
+                "Namn: " + name + "\n"
                 + "Lever? " + living);
+
+            while (true)
+            {
+                Console.WriteLine("Vill du jämföra två tal och se vilket som är störst? (y/n)");
+                answer = Console.ReadLine();
+                if (answer == "y")
+                {
+                    Console.WriteLine("Skriv in första numret:");
+                    number1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Skriv in andra numret:");
+                    number2 = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Det största talet är: " + Math.Max(number1, number2));
+                    Environment.Exit(0);
+                }
+                else if (answer == "n")
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    Console.WriteLine("Var vänlig skriv in en giltlig inmatning. (y/n \n");
+                }
+            }
         }
     }
 }
