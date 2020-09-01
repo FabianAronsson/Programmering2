@@ -6,12 +6,14 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
+            Random rand = new Random();
             var living = "";
             var check = true;
             var age = 0;
             var answer = "";
             var number1 = 0;
             var number2 = 0;
+            var stair = "x";
 
             while (check)
             {
@@ -70,16 +72,41 @@ namespace HelloWorld
                     number2 = Convert.ToInt32(Console.ReadLine());
 
                     Console.WriteLine("Det största talet är: " + Math.Max(number1, number2));
-                    Environment.Exit(0);
+                    break;
                 }
                 else if (answer == "n")
                 {
-                    Environment.Exit(0);
+                    break;
                 }
                 else
                 {
                     Console.WriteLine("Var vänlig skriv in en giltlig inmatning. (y/n \n");
                 }
+            }
+            Console.WriteLine("Skriv in en siffra från 1-5 för att få en tur siffra.");
+            switch (Convert.ToInt32(Console.ReadLine()))
+            {
+                case 1:
+                    Console.WriteLine(rand.Next(1, 3));
+                    break;
+                case 2:
+                    Console.WriteLine(rand.Next(5, 10));
+                    break;
+                case 3:
+                    Console.WriteLine(rand.Next(10, 20));
+                    break;
+                case 4:
+                    Console.WriteLine(rand.Next(30, 50));
+                    break;
+                case 5:
+                    Console.WriteLine(rand.Next(50, 100));
+                    break;
+            }
+
+            for (int i = 0; i < Math.Max(number1, number2); i++)
+            {
+                Console.WriteLine(stair);
+                stair += "x";
             }
         }
     }
