@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace HelloWorld
 {
@@ -108,6 +109,46 @@ namespace HelloWorld
                 Console.WriteLine(stair);
                 stair += "x";
             }
+
+            List<string> names = new List<String>();
+
+            for(int i = 0; i < 5; i++)
+            {
+                names.Add(Console.ReadLine());
+            }
+
+            for(int i = names.Count - 1; i + 1 > 0; i--)
+            {
+                Console.WriteLine(names[i]);
+            }
+
+
+            /*var personList = new List<Person>();
+            var person = new Person();                      //Försökte, men internetet lade ner och förstår inte hur jag ska få in värden i arrayen så jag kan printa dem.
+            for (int i = 0; i < 2; i++)
+            {
+               
+                person.Age = Console.ReadLine();
+                person.Name = Console.ReadLine();
+                personList.Add(person.Age);
+            }
+
+            Console.WriteLine(person.Age);
+
+            foreach(var item in personList)
+            {
+                Console.WriteLine(item);
+            }*/
+
         }
     }
+
+    /*class Person
+    {
+        public string Age { get; set; }
+
+        public string Name { get; set; }
+
+       
+    }*/
 }
