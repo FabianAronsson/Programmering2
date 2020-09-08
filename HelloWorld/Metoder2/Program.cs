@@ -10,7 +10,7 @@ namespace Metoder2
         {
             Console.WriteLine(SumOfArray(new List<int> { 1, 2, 3 }));
             Console.WriteLine(string.Join(",",ReveresedStringArray(new List<string> { "hej", "på", "dig" })));
-            Console.WriteLine(GreaterAndLesserInt(new List<int> { 20,-1,50, 0, 2000, -5, 1 }));
+            Console.WriteLine(GreaterAndLesserIntOfArray(new List<int> { 20,-1,50, 0, 2000, -5, 1 }));
         }
 
         
