@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabian.aronsson1\\Desktop\\Skola\\Github\\Programmering2\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
-      "projectName": "HelloWorld",
-      "projectPath": "C:\\Users\\fabian.aronsson1\\Desktop\\Skola\\Github\\Programmering2\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
+      "projectUniqueName": "C:\\Users\\fabian.aronsson1\\Desktop\\Skola\\Github\\Programmering2\\HelloWorld\\Metoder2\\Metoder2.csproj",
+      "projectName": "Metoder2",
+      "projectPath": "C:\\Users\\fabian.aronsson1\\Desktop\\Skola\\Github\\Programmering2\\HelloWorld\\Metoder2\\Metoder2.csproj",
       "packagesPath": "C:\\Users\\fabian.aronsson1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabian.aronsson1\\Desktop\\Skola\\Github\\Programmering2\\HelloWorld\\HelloWorld\\obj\\",
+      "outputPath": "C:\\Users\\fabian.aronsson1\\Desktop\\Skola\\Github\\Programmering2\\HelloWorld\\Metoder2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fabian.aronsson1\\AppData\\Roaming\\NuGet\\NuGet.Config",
