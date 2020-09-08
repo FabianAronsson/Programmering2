@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Metoder2
 {
@@ -7,18 +8,57 @@ namespace Metoder2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine(Subtract(Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine())));
+            Console.WriteLine(SumOfArray(new List<int> { 1, 2, 3 }));
+            Console.WriteLine(string.Join(",",ReveresedStringArray(new List<string> { "hej", "på", "dig" })));
+            Console.WriteLine(GreaterAndLesserInt(new List<int> { 20,-1,50, 0, 2000, -5, 1 }));
         }
 
-        private static int Subtract (int firstInt, int secondInt)
+        
+
+        private static int SumOfArray(List<int> intArray)
         {
-            return (firstInt - secondInt);
+            var sum = 0;
+            for (int i = 0; i < intArray.Count; i++)
+            {
+                sum += intArray[i];
+            }
+            return sum;
         }
 
-        private static List<String> Add()
+        private static List<string> ReveresedStringArray(List<string> stringArray)
         {
-            return (firstInt - secondInt);
+            for (int i = 0; i < stringArray.Count / 2; i++) //delar på två eftersom annars vändar man på arrayen igen
+            {
+                var temp = stringArray[i];
+                stringArray[i] = stringArray[stringArray.Count - i - 1];
+                stringArray[stringArray.Count - i - 1] = temp;
+                
+            }
+            return stringArray;
         }
+
+        private static string GreaterAndLesserIntOfArray(List<int> intArray)
+        {
+            var highest = 0;
+            var lowest = 0;
+            for (int i = 0; i < intArray.Count - 1; i++)
+            {
+                for (int j = 0; j < intArray.Count; j++)
+                {
+                    if (intArray[j] > intArray[i + 1])
+                    {
+                        highest = intArray[j];
+                    }
+                    if (intArray[j] < intArray[i + 1])
+                    {
+                        lowest = intArray[j];
+                    }
+                }
+            }
+            return "Highest: " + highest + "\nLowest: " + lowest; 
+        }
+        
+            
+        
     }
 }
