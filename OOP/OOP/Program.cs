@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection.Metadata;
 
 namespace OOP
 {
     class Program
     {
         public Customer customer = new Customer();
-        public Products product = new Products();
+        
 
         static void Main(string[] args)
         {
             Program con = new Program();
 
             con.AddCustomer();
-            con.ShowProducts();
             con.MakeAnOrder();
             con.CurrentOrder();
         }
@@ -23,53 +23,48 @@ namespace OOP
             Console.WriteLine("Please enter your name");
             customer._name = Console.ReadLine();
         }
-        private void ShowProducts()
-        {
-            Console.WriteLine("This is our current fresh stock of fine milk.");
-            Console.WriteLine(product._product);
-        }
+        
 
         private void MakeAnOrder()
         {
-            bool madeOrder = false;
-            Console.WriteLine("Would you like to order milk?");
-            if(Console.ReadLine() == "yes")
-            {
-                customer._orders.Add(product._product);
-            }
-            else
-            {
-                Console.WriteLine("Either you did not want to order or you're being an idiot. \nPlease make an order! We need money");
-                MakeAnOrder();
-            }
+            Boolean madeOrder = false;
 
-            Console.WriteLine("Do you want to order more milk?");
-            if(Console.ReadLine() == "yes")
+            while (!madeOrder)
             {
-                while (!madeOrder)
+                var choice = Console.ReadLine().ToLower();
+                switch (choice)
                 {
-                    customer._orders.Add(product._product);
-                    Console.WriteLine("More milk!");
-                    Console.WriteLine("Do you want to order more milk? You currently have " + customer._orders.Count + " " + product._product + " in your cart.");
-                    if (Console.ReadLine() == "no")
-                    {
-                        Console.WriteLine("Alright no more milk for you.");
-                        madeOrder = true;  
-                    }
-                    
+                    case "milk":
+                        var milk = new Milk();
+                        customer._orders.Add(milk);
+                        break;
+                    case "butter":
+                        var butter = new Butter();
+                        customer._orders.Add(butter);
+                        break;
+
+                    case "water":
+                        var water = new Water();
+                        customer._orders.Add(water);
+                        break;
+
+                    case "exit":
+                        madeOrder = true;
+                        break;
+                    default:
+                        break;
                 }
-            }
-            else 
-            {
-                Console.WriteLine("No more milk for you.");
             }
            
         }
+
         private void CurrentOrder()
         {
             Console.WriteLine("Hello " + customer._name + "!");
-            Console.WriteLine("Your current order is: \n" + customer._orders.Count + " " + product._product);
-            Console.WriteLine("Would you like to make a purchase?");
+            foreach (var item in customer._orders)
+            {
+                item.product();
+            }
             Environment.Exit(0);
         }
     }

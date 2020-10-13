@@ -8,6 +8,6 @@ namespace OOP
     class Customer
     {
         public string _name = "";
-        public List<string> _orders = new List<string>();
+        public List<Products> _orders = new List<Products>();
     }
 }
