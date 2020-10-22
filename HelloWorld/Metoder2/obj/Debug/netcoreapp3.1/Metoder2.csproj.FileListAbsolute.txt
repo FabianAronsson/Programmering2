@@ -11,3 +11,16 @@ C:\Users\fabian.aronsson1\Desktop\Skola\Github\Programmering2\HelloWorld\Metoder
 C:\Users\fabian.aronsson1\Desktop\Skola\Github\Programmering2\HelloWorld\Metoder2\obj\Debug\netcoreapp3.1\Metoder2.dll
 C:\Users\fabian.aronsson1\Desktop\Skola\Github\Programmering2\HelloWorld\Metoder2\obj\Debug\netcoreapp3.1\Metoder2.pdb
 C:\Users\fabian.aronsson1\Desktop\Skola\Github\Programmering2\HelloWorld\Metoder2\obj\Debug\netcoreapp3.1\Metoder2.genruntimeconfig.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\bin\Debug\netcoreapp3.1\Metoder2.exe
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\bin\Debug\netcoreapp3.1\Metoder2.deps.json
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\bin\Debug\netcoreapp3.1\Metoder2.runtimeconfig.json
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\bin\Debug\netcoreapp3.1\Metoder2.runtimeconfig.dev.json
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\bin\Debug\netcoreapp3.1\Metoder2.dll
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\bin\Debug\netcoreapp3.1\Metoder2.pdb
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\obj\Debug\netcoreapp3.1\Metoder2.csprojAssemblyReference.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\obj\Debug\netcoreapp3.1\Metoder2.AssemblyInfoInputs.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\obj\Debug\netcoreapp3.1\Metoder2.AssemblyInfo.cs
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\obj\Debug\netcoreapp3.1\Metoder2.csproj.CoreCompileInputs.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\obj\Debug\netcoreapp3.1\Metoder2.dll
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\obj\Debug\netcoreapp3.1\Metoder2.pdb
+D:\Skrivbord\Mapp\GitHub\Programmering2\HelloWorld\Metoder2\obj\Debug\netcoreapp3.1\Metoder2.genruntimeconfig.cache

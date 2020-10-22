@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fabian.aronsson1\\Desktop\\Skola\\Github\\Programmering2\\HelloWorld\\Metoder2\\Metoder2.csproj": {}
+    "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\HelloWorld\\Metoder2\\Metoder2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fabian.aronsson1\\Desktop\\Skola\\Github\\Programmering2\\HelloWorld\\Metoder2\\Metoder2.csproj": {
+    "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\HelloWorld\\Metoder2\\Metoder2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fabian.aronsson1\\Desktop\\Skola\\Github\\Programmering2\\HelloWorld\\Metoder2\\Metoder2.csproj",
+        "projectUniqueName": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\HelloWorld\\Metoder2\\Metoder2.csproj",
         "projectName": "Metoder2",
-        "projectPath": "C:\\Users\\fabian.aronsson1\\Desktop\\Skola\\Github\\Programmering2\\HelloWorld\\Metoder2\\Metoder2.csproj",
-        "packagesPath": "C:\\Users\\fabian.aronsson1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fabian.aronsson1\\Desktop\\Skola\\Github\\Programmering2\\HelloWorld\\Metoder2\\obj\\",
+        "projectPath": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\HelloWorld\\Metoder2\\Metoder2.csproj",
+        "packagesPath": "C:\\Users\\Kingen34\\.nuget\\packages\\",
+        "outputPath": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\HelloWorld\\Metoder2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\fabian.aronsson1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kingen34\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
