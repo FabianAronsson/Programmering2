@@ -35,7 +35,7 @@ namespace OOP
                 switch (choice)
                 {
                     case "milk":
-                        var milk = new Milk();
+                        var milk = new Milk();<<
                         customer._orders.Add(milk);
                         break;
                     case "butter":
