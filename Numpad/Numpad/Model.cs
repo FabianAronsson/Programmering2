@@ -22,6 +22,5 @@ namespace Numpad
             set { calcChoice = value; }
         }
 
-
     }
 }

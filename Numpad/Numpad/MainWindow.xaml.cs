@@ -57,12 +57,22 @@ namespace Numpad
                         if(model.Numbers.Count > 1)
                         {
                             var result = 0;
+
+                            if (model.Operator[0] == '+')
+                            {
+                                result += Addition(model.Numbers[0], model.Numbers[1]);
+                            }
+
                             for (int i = 0; i < model.Numbers.Count; i++)
                             {
-                                
-                                var operators = model.Operator[i];
-                                result += model.Numbers[i] operators model.Numbers[i + 1];
-
+                                if(model.Operator[i] == '+')
+                                {
+                                      result += Addition(result, model.Numbers[i + 1]);
+                                }
+                                else if (model.Operator[i] == '-')
+                                {
+                                    result += Subtraction(result, model.Numbers[i + 1]);
+                                }
                             }
 
                         }
@@ -74,6 +84,18 @@ namespace Numpad
         }
 
 
-        
+
+
+
+        private int Addition(int firstNumber, int secondNumber)
+        {
+            return (firstNumber + secondNumber);
+        }
+
+        private int Subtraction(int firstNumber, int secondNumber)
+        {
+            return (firstNumber - secondNumber);
+        }
+
     }
 }
