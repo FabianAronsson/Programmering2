@@ -1,0 +1,5 @@
+D:\Skrivbord\Mapp\GitHub\Programmering2\Numpad\Numpad\obj\Debug\netcoreapp3.1\Calculator.csprojAssemblyReference.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\Numpad\Numpad\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\Skrivbord\Mapp\GitHub\Programmering2\Numpad\Numpad\obj\Debug\netcoreapp3.1\App.g.cs
+D:\Skrivbord\Mapp\GitHub\Programmering2\Numpad\Numpad\obj\Debug\netcoreapp3.1\Calculator_MarkupCompile.cache
+D:\Skrivbord\Mapp\GitHub\Programmering2\Numpad\Numpad\obj\Debug\netcoreapp3.1\Calculator_MarkupCompile.lref

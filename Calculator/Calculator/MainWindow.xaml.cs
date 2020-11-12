@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Numpad
+namespace Calculator
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -28,7 +28,7 @@ namespace Numpad
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
             Model model = new Model();
-            if(sender is Button button)
+            if (sender is Button button)
             {
                 switch (button.Content)
                 {
@@ -54,7 +54,7 @@ namespace Numpad
                         break;
                     case "EXE":
 
-                        if(model.Numbers.Count > 1)
+                        if (model.Numbers.Count > 1)
                         {
                             var result = 0;
 
@@ -65,9 +65,9 @@ namespace Numpad
 
                             for (int i = 0; i < model.Numbers.Count; i++)
                             {
-                                if(model.Operator[i] == '+')
+                                if (model.Operator[i] == '+')
                                 {
-                                      result += Addition(result, model.Numbers[i + 1]);
+                                    result += Addition(result, model.Numbers[i + 1]);
                                 }
                                 else if (model.Operator[i] == '-')
                                 {
@@ -77,16 +77,11 @@ namespace Numpad
 
                         }
                         break;
-
                     default:
                         break;
                 }
             }
         }
-
-
-
-
 
         private int Addition(int firstNumber, int secondNumber)
         {
@@ -100,3 +95,4 @@ namespace Numpad
 
     }
 }
+

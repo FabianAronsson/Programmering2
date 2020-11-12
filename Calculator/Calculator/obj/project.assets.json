@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\Numpad\\Numpad\\Calculator.csproj",
+      "projectUniqueName": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\Calculator\\Calculator\\Calculator.csproj",
       "projectName": "Calculator",
-      "projectPath": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\Numpad\\Numpad\\Calculator.csproj",
+      "projectPath": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\Calculator\\Calculator\\Calculator.csproj",
       "packagesPath": "C:\\Users\\Kingen34\\.nuget\\packages\\",
-      "outputPath": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\Numpad\\Numpad\\obj\\",
+      "outputPath": "D:\\Skrivbord\\Mapp\\GitHub\\Programmering2\\Calculator\\Calculator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kingen34\\AppData\\Roaming\\NuGet\\NuGet.Config",
