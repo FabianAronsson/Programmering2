@@ -6,17 +6,25 @@ namespace Calculator
 {
     class Model
     {
-        private List<int> numbers = new List<int>();
+        private List<string> stringNumbers = new List<string>();
 
-        public List<int> Numbers
+        public List<string> TempNumbers
         {
-            get { return numbers; }
-            set { numbers = value; }
+            get { return stringNumbers; }
+            set { stringNumbers = value; }
         }
 
-        private List<char> calcChoice;
+        private List<float> floatNumbers = new List<float>();
 
-        public List<char> Operator
+        public List<float> CalcNumbers
+        {
+            get { return floatNumbers; }
+            set { floatNumbers = value; }
+        }
+
+        private char calcChoice;
+
+        public char Operator
         {
             get { return calcChoice; }
             set { calcChoice = value; }
