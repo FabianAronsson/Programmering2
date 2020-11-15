@@ -56,7 +56,7 @@ namespace Calculator
 
                         if (model.Numbers.Count > 1)
                         {
-                            float result = 0;
+                            double result = 0;
 
                             if (model.Operator == '+')
                             {
@@ -72,7 +72,7 @@ namespace Calculator
                             }
                             else if (model.Operator == '+')
                             {
-                                result += Division(model.Numbers[0], model.Numbers[1]);
+                                result += Division(model.CalcNumbers[0], model.Numbers[1]);
                             }
 
 
@@ -84,24 +84,41 @@ namespace Calculator
             }
         }
 
-        private float Addition(float firstNumber, float secondNumber)
+        private double Addition(double firstNumber, double secondNumber)
         {
             return (firstNumber + secondNumber);
         }
 
-        private float Subtraction(float firstNumber, float secondNumber)
+        private double Subtraction(double firstNumber, double secondNumber)
         {
             return (firstNumber - secondNumber);
         }
 
-        private float Multiplication(float firstNumber, float secondNumber)
+        private double Multiplication(double firstNumber, double secondNumber)
         {
             return (firstNumber * secondNumber);
         }
 
-        private float Division(float firstNumber, float secondNumber)
+        private double Division(double firstNumber, double secondNumber)
         {
             return (firstNumber / secondNumber);
+        }
+
+        private double SquareRoot(double number)
+        {
+            double temp = number; 
+            double result;
+            for (int i = 0; i < 4; i++)
+            {
+                result = 0.5 * (temp + (number / temp));
+                temp = result;
+            }
+            return temp;
+        }
+
+        private double PercentageOf(double number)
+        {
+            return (number / 100);
         }
 
     }

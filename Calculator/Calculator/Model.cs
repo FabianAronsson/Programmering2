@@ -14,9 +14,9 @@ namespace Calculator
             set { stringNumbers = value; }
         }
 
-        private List<float> floatNumbers = new List<float>();
+        private List<double> floatNumbers = new List<double>();
 
-        public List<float> CalcNumbers
+        public List<double> CalcNumbers
         {
             get { return floatNumbers; }
             set { floatNumbers = value; }
