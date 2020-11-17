@@ -29,5 +29,14 @@ namespace Calculator
             get { return calcChoice; }
             set { calcChoice = value; }
         }
+
+        private Boolean operators;
+
+        public Boolean OperatorPicked
+        {
+            get { return operators; }
+            set { operators = value; }
+        }
+
     }
 }

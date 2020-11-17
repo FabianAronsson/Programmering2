@@ -47,45 +47,80 @@ namespace Calculator
                     case "9":
                         TextField.Text += button.Content;
                         break;
-                    case "+":
-                        model.Operator.Add(Int32.Parse(TextField.Text));
-                        model.Operator = '+';
-                        break;
-                    case "-":
-                        model.Operator.Add(Int32.Parse(TextField.Text));
-                        model.Operator = '-';
-                        break;
-                    case "=":
-
-                        if (model.Numbers.Count > 1)
-                        {
-                            double result = 0;
-
-                            if (model.Operator == '+')
-                            {
-                                result += Operators.Addition(model.CalcNumbers[0], model.Numbers[1]);
-                            }
-                            else if (model.Operator == '+')
-                            {
-                                result += Operators.Subtraction(model.Numbers[0], model.Numbers[1]);
-                            }
-                            else if (model.Operator == '+')
-                            {
-                                result += Operators.Multiplication(model.Numbers[0], model.Numbers[1]);
-                            }
-                            else if (model.Operator == '+')
-                            {
-                                result += Operators.Division(model.CalcNumbers[0], model.Numbers[1]);
-                            }
-
-
-                        }
-                        break;
                     default:
                         break;
                 }
+                   if (!model.OperatorPicked)
+                {
+                    switch (button.Content)
+                    {
+                        case "+":
+                            model.Operator = '+';
+                            TextField.Text += button.Content;
+                            break;
+                        case "-":
+                            model.Operator = '-';
+                            TextField.Text += button.Content;
+                            break;
+                        case "×":
+                            model.Operator = '×';
+                            TextField.Text += button.Content;
+                            break;
+                        case "÷":
+                            model.Operator = '÷';
+                            TextField.Text += button.Content;
+                            break;
+                        case "√":
+                            if (String.IsNullOrEmpty(TextField.Text))
+                            {
+                                TextField.Text += button.Content;
+                            }
+                            break;
+                        case "^":
+                            if (String.IsNullOrEmpty(TextField.Text))
+                            {
+                                //Do nothing
+                            }
+                            else
+                            {
+                                TextField.Text += button.Content;
+                            }
+                            break;
+                        case "CE":
+                            TextField.Text = "";
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+                    switch (button.Content)
+                    {
+                        case "=":
+                            if (String.IsNullOrEmpty(TextField.Text))
+                            {
+                                if (!(model.Operator == '^') || !(model.Operator == '√'))
+                                {
+                                    SplitString(TextField.Text);
+                                }
+
+
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                
             }
         }
+
+        private string[] SplitString(string text)
+        {
+            var splittedNumers = TextField.Text.Split(text);
+
+            return splittedNumers;
+        }
     }
-}
+
 
