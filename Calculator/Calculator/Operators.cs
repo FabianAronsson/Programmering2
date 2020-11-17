@@ -8,7 +8,7 @@ namespace Calculator
     {
     }
 
-    class Multiplication : Operators
+    class Multiplication 
     {
         public virtual double Multiplicate(double number1, double number2)
         {
@@ -24,7 +24,7 @@ namespace Calculator
             return (base.Multiplicate(number1, (1 / number2)));
         }
     }
-    class Addition : Operators
+    class Addition
     {
         public virtual double Add(double number1, double number2)
         {
@@ -41,7 +41,7 @@ namespace Calculator
         }
     }
 
-    class Exponention : Operators
+    class Exponentiation
     {
         public virtual double PowerOf(double num1, double num2)
         {
@@ -49,7 +49,7 @@ namespace Calculator
             return result;
         }
     }
-    class SquareRoot : Exponention
+    class SquareRoot : Exponentiation
     {
         public override double PowerOf(double number1, double number2)
         {

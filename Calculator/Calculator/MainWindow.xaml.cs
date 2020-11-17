@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,6 +21,13 @@ namespace Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Addition _add = new Addition();
+        private Subtraction _remove = new Subtraction();
+        private Multiplication _multiplicate = new Multiplication();
+        private Division _divide = new Division();
+        private Exponentiation _powerOf = new Exponentiation();
+        private SquareRoot _sqrt = new SquareRoot();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,13 +35,12 @@ namespace Calculator
 
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
-            Operators operators = new Operators();
             Model model = new Model();
-            
 
             if (e.Source is Button button)
             {
-                switch (button.Content)
+                var value = button.Content;
+                switch (value)
                 {
                     case "0":
                     case "1":
@@ -47,80 +54,128 @@ namespace Calculator
                     case "9":
                         TextField.Text += button.Content;
                         break;
+                    case "CE":
+                        TextField.Text = "";
+                        model.OperatorPicked = false;
+                        break;
+                    case "=":
+                        //if (String.IsNullOrWhiteSpace(TextField.Text))
+                        
+                            CalculateResult(ConvertToDoubleArray(SplitString(model.Operator)));
+                        
+                        break;
                     default:
                         break;
                 }
-                   if (!model.OperatorPicked)
-                {
-                    switch (button.Content)
+                    if (!model.OperatorPicked)
                     {
-                        case "+":
-                            model.Operator = '+';
-                            TextField.Text += button.Content;
-                            break;
-                        case "-":
-                            model.Operator = '-';
-                            TextField.Text += button.Content;
-                            break;
-                        case "×":
-                            model.Operator = '×';
-                            TextField.Text += button.Content;
-                            break;
-                        case "÷":
-                            model.Operator = '÷';
-                            TextField.Text += button.Content;
-                            break;
-                        case "√":
-                            if (String.IsNullOrEmpty(TextField.Text))
+                        if (!String.IsNullOrEmpty(TextField.Text))
+                        {
+                            switch (value)
                             {
-                                TextField.Text += button.Content;
+                                case "+":
+                                    model.Operator = "+";
+                                    TextField.Text += button.Content;
+                                    model.OperatorPicked = true;
+                                    break;
+                                case "-":
+                                    model.Operator = "-";
+                                    TextField.Text += button.Content;
+                                    model.OperatorPicked = true;
+                                    break;
+                                case "×":
+                                    model.Operator = "×";
+                                    TextField.Text += button.Content;
+                                    model.OperatorPicked = true;
+                                    break;
+                                case "÷":
+                                    model.Operator = "÷";
+                                    TextField.Text += button.Content;
+                                    model.OperatorPicked = true;
+                                    break;
+                                case "^":
+                                    if (!String.IsNullOrEmpty(TextField.Text))
+                                    {
+                                        model.Operator = "^";
+                                        TextField.Text += button.Content;
+                                        model.OperatorPicked = true;
+                                    }
+                                    break;
+                                default:
+                                    break;
                             }
-                            break;
-                        case "^":
-                            if (String.IsNullOrEmpty(TextField.Text))
-                            {
-                                //Do nothing
-                            }
+                        }   
                             else
                             {
-                                TextField.Text += button.Content;
-                            }
-                            break;
-                        case "CE":
-                            TextField.Text = "";
-                            break;
-
-                        default:
-                            break;
-                    }
-                }
-                    switch (button.Content)
-                    {
-                        case "=":
-                            if (String.IsNullOrEmpty(TextField.Text))
+                            switch (value)
                             {
-                                if (!(model.Operator == '^') || !(model.Operator == '√'))
-                                {
-                                    SplitString(TextField.Text);
-                                }
-
-
+                                case "√":
+                                    if (String.IsNullOrEmpty(TextField.Text))
+                                    {
+                                        model.Operator = "√";
+                                        TextField.Text += button.Content;
+                                        model.OperatorPicked = false;
+                                        model.SpecialOperatorPicked = true;
+                                    }
+                                    break;
+                                default:
+                                    break;
                             }
-                            break;
-                        default:
-                            break;
+                        }
                     }
                 }
-                
             }
+
+        private void CalculateResult(List<double> numbers)
+        {
+            Model model = new Model();
+
+            var number1 = numbers[0];
+            var number2 = numbers[1];
+            double result = 0;
+
+            if (model.OperatorPicked)
+            {
+
+            }
+            else
+            {
+                switch (model.Operator)
+                {
+                    case "√":
+                        result = _sqrt.PowerOf(numbers[0], 0.5);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            DisplayResult(result);
         }
 
         private string[] SplitString(string text)
         {
             var splittedNumers = TextField.Text.Split(text);
-
+            Console.WriteLine(splittedNumers);
             return splittedNumers;
         }
+
+        private void DisplayResult(double result)
+        {
+            TextField.Text = result.ToString();
+        }
+        private List<double> ConvertToDoubleArray(string[] numbers)
+        {
+            List<double> doubleNumbers = new List<double>();
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                doubleNumbers[i] = double.Parse(numbers[i]);
+            }
+            return doubleNumbers;
+        }
     }
+
+}
+
+        
 
 
