@@ -27,7 +27,10 @@ namespace Calculator
 
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
+            Operators operators = new Operators();
             Model model = new Model();
+            
+
             if (e.Source is Button button)
             {
                 switch (button.Content)
@@ -45,14 +48,14 @@ namespace Calculator
                         TextField.Text += button.Content;
                         break;
                     case "+":
-                        model.Numbers.Add(Int32.Parse(TextField.Text));
+                        model.Operator.Add(Int32.Parse(TextField.Text));
                         model.Operator = '+';
                         break;
                     case "-":
-                        model.Numbers.Add(Int32.Parse(TextField.Text));
+                        model.Operator.Add(Int32.Parse(TextField.Text));
                         model.Operator = '-';
                         break;
-                    case "EXE":
+                    case "=":
 
                         if (model.Numbers.Count > 1)
                         {
@@ -60,19 +63,19 @@ namespace Calculator
 
                             if (model.Operator == '+')
                             {
-                                result += Addition(model.CalcNumbers[0], model.Numbers[1]);
+                                result += Operators.Addition(model.CalcNumbers[0], model.Numbers[1]);
                             }
                             else if (model.Operator == '+')
                             {
-                                result += Subtraction(model.Numbers[0], model.Numbers[1]);
+                                result += Operators.Subtraction(model.Numbers[0], model.Numbers[1]);
                             }
                             else if (model.Operator == '+')
                             {
-                                result += Multiplication(model.Numbers[0], model.Numbers[1]);
+                                result += Operators.Multiplication(model.Numbers[0], model.Numbers[1]);
                             }
                             else if (model.Operator == '+')
                             {
-                                result += Division(model.CalcNumbers[0], model.Numbers[1]);
+                                result += Operators.Division(model.CalcNumbers[0], model.Numbers[1]);
                             }
 
 
@@ -83,44 +86,6 @@ namespace Calculator
                 }
             }
         }
-
-        private double Addition(double firstNumber, double secondNumber)
-        {
-            return (firstNumber + secondNumber);
-        }
-
-        private double Subtraction(double firstNumber, double secondNumber)
-        {
-            return (firstNumber - secondNumber);
-        }
-
-        private double Multiplication(double firstNumber, double secondNumber)
-        {
-            return (firstNumber * secondNumber);
-        }
-
-        private double Division(double firstNumber, double secondNumber)
-        {
-            return (firstNumber / secondNumber);
-        }
-
-        private double SquareRoot(double number)
-        {
-            double temp = number; 
-            double result;
-            for (int i = 0; i < 4; i++)
-            {
-                result = 0.5 * (temp + (number / temp));
-                temp = result;
-            }
-            return temp;
-        }
-
-        private double PercentageOf(double number)
-        {
-            return (number / 100);
-        }
-
     }
 }
 

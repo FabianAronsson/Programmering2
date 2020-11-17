@@ -12,7 +12,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
         <TextBlock Name="TextField" Text=""/>
@@ -29,24 +29,33 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-
-            <Button Content="7" Click="ButtonClick"/>
-            <Button Grid.Column="1" Content="8" Click="ButtonClick"/>
-            <Button Grid.Column="2" Content="9" Click="ButtonClick"/>
-            <Button Grid.Column="3" Content="()"/>
-            <Button Grid.Row="1" Content="4" Click="ButtonClick"/>
-            <Button Grid.Row="1" Grid.Column="1" Content="5" Click="ButtonClick"/>
-            <Button Grid.Row="1" Grid.Column="2" Content="6" Click="ButtonClick"/>
-            <Button Grid.Row="1" Grid.Column="3" Content="+" />
-            <Button Grid.Row="2" Grid.Column="0" Content="1" Click="ButtonClick"/>
-            <Button Grid.Row="2" Grid.Column="1" Content="2" Click="ButtonClick"/>
-            <Button Grid.Row="2" Grid.Column="2" Content="3" Click="ButtonClick"/>
+            
+            
+            <Button Content="%"/>
+            <Button Grid.Column="1" Content="√"/>
+            <Button Grid.Column="2" Content="CE"/>
+            <Button Grid.Column="3" Content="×"/>
+            <Button Grid.Row="1" Grid.Column="3" Content="÷"/>
             <Button Grid.Row="2" Grid.Column="3" Content="-"/>
-            <Button Grid.Row="3" Grid.Column="0" Content="0" Click="ButtonClick"/>
-            <Button Grid.Row="3" Grid.Column="1" Content="."/>
-            <Button Grid.Row="3" Grid.Column="2"/>
-            <Button Grid.Row="3" Grid.Column="3" Content="EXE"/>
+            <Button Grid.Row="3" Grid.Column="3" Content="+"/>
+            
+            
+            <Button Background="#FFF" Grid.Row="1" Content="7" Click="ButtonClick"/>
+            <Button Background="#FFF" Grid.Row="1" Grid.Column="1" Content="8" Click="ButtonClick"/>
+            <Button Background="#FFF" Grid.Row="1" Grid.Column="2" Content="9" Click="ButtonClick"/>
+            <Button Background="#FFF" Grid.Row="2" Content="4" Click="ButtonClick"/>
+            <Button Background="#FFF" Grid.Row="2" Grid.Column="1" Content="5" Click="ButtonClick"/>
+            <Button Background="#FFF" Grid.Row="2" Grid.Column="2" Content="6" Click="ButtonClick"/>
+            <Button Background="#FFF" Grid.Row="3" Grid.Column="0" Content="1" Click="ButtonClick"/>
+            <Button Background="#FFF" Grid.Row="3" Grid.Column="1" Content="2" Click="ButtonClick"/>
+            <Button Background="#FFF" Grid.Row="3" Grid.Column="2" Content="3" Click="ButtonClick"/>
+            <Button Background="#FFF" Grid.Row="4" Grid.Column="1" Content="0" Click="ButtonClick"/>
+
+
+            <Button Background="#FFF" Grid.Row="4" Grid.Column="2" Content="."/>
+            <Button Grid.Row="4" Grid.Column="3" Content="=" Background="#8ab9e0"/> 
         </Grid>
     </Grid>
 </Window>
