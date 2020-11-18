@@ -14,17 +14,17 @@ namespace Calculator
             set { Numbers = value; }
         }
 
-        private string calcChoice;
+         private char calcChoice;
 
-        public string Operator
+        public char Operator
         {
             get { return calcChoice; }
             set { calcChoice = value; }
         }
 
-        private bool operators = false;
+         private Boolean operators;
 
-        public bool OperatorPicked
+        public Boolean OperatorPicked
         {
             get { return operators; }
             set { operators = value; }
