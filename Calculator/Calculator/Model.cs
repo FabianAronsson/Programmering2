@@ -22,21 +22,30 @@ namespace Calculator
             set { calcChoice = value; }
         }
 
-         private Boolean operators;
-
+        private Boolean operators;
+        
         public Boolean OperatorPicked
         {
             get { return operators; }
             set { operators = value; }
         }
 
-        private bool specialOperator;
+        private Boolean specialOperator;
 
-        public bool SpecialOperatorPicked
+        public Boolean SpecialOperatorPicked
         {
             get { return specialOperator; }
             set { specialOperator = value; }
         }
+
+        private Boolean comma;
+
+        public Boolean CommaUsed
+        {
+            get { return comma; }
+            set { comma = value; }
+        }
+
 
     }
 }

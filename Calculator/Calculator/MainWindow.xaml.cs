@@ -1,18 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Calculator
 {
@@ -34,10 +23,8 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private void ButtonClick(object sender, RoutedEventArgs e)
+        private void NumberButtonClick(object sender, RoutedEventArgs e)
         {
-            
-
             if (e.Source is Button button)
             {
                 var value = button.Content;
@@ -55,93 +42,131 @@ namespace Calculator
                     case "9":
                         TextField.Text += button.Content;
                         break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void SpecialButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (e.Source is Button button)
+            {
+                switch (button.Content)
+                {
                     case "CE":
                         TextField.Text = "";
                         model.OperatorPicked = false;
                         break;
                     case ".":
-                        if (!(TextField.Text[TextField.Text.Length - 1] == model.Operator))
-                        {
-                            TextField.Text += ".";
-                        }
+                        
+                            if (!model.CommaUsed)
+                            {
+                                model.CommaUsed = true;
+                                TextField.Text += ",";
+                            }
+                        
                         break;
                     case "=":
                         if (!String.IsNullOrWhiteSpace(TextField.Text))
                         {
-                            ConvertToDoubleList(SplitString(model.Operator));
+                            SaveList(ConvertToDoubleList(SplitString(model.Operator)));
+
                             CalculateResult();
                         }
                         break;
-                    default:
-                        break;
                 }
-                    if (!model.OperatorPicked )
+            }
+        }
+
+
+        private void OperandButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (e.Source is Button button)
+            {
+                if (!model.OperatorPicked)
+                {
+
+                    switch (button.Content)
                     {
-                        switch (value)
-                        {
-                            case "√":
-                                if (!String.IsNullOrEmpty(TextField.Text))
-                                {
-                                    model.Operator = '√';
-                                    TextField.Text += button.Content;
-                                    model.OperatorPicked = true;
-                                    model.SpecialOperatorPicked = true;
-                                }
-                                break;
-                            default:
-                                break;
-                        }
+                        case "√":
+                            if (String.IsNullOrEmpty(TextField.Text))
+                            {
+                                model.Operator = '√';
+                                TextField.Text += button.Content;
+                                model.OperatorPicked = true;
+                                model.SpecialOperatorPicked = true;
+                                model.CommaUsed = false;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
                     if (!String.IsNullOrEmpty(TextField.Text))
+                    {
+                        if (!(TextField.Text[TextField.Text.Length - 1] == '.'))
                         {
-                            switch (value)
+                            switch (button.Content)
                             {
                                 case "+":
                                     model.Operator = '+';
                                     TextField.Text += button.Content;
-                                    model.OperatorPicked = true;
+                                    setBooleans();
                                     break;
                                 case "-":
                                     model.Operator = '-';
                                     TextField.Text += button.Content;
-                                    model.OperatorPicked = true;
-                                TextField.Text += "hej";
+                                    setBooleans();
                                     break;
                                 case "×":
                                     model.Operator = '×';
                                     TextField.Text += button.Content;
-                                    model.OperatorPicked = true;
+                                    setBooleans();
                                     break;
                                 case "÷":
                                     model.Operator = '÷';
                                     TextField.Text += button.Content;
-                                    model.OperatorPicked = true;
+                                    setBooleans();
                                     break;
                                 case "^":
                                     if (!String.IsNullOrEmpty(TextField.Text))
                                     {
                                         model.Operator = '^';
                                         TextField.Text += button.Content;
-                                        model.OperatorPicked = true;
+                                        setBooleans();
                                     }
                                     break;
                                 default:
                                     break;
                             }
-                        
-                        }   
+                        }
                     }
                 }
+            }
         }
 
         private void CalculateResult()
         {
             double result = 0;
-            var number1 = model.CalcNumbers[0];
-            var number2 = model.CalcNumbers[1];
 
-            if (model.OperatorPicked)
+            if (model.SpecialOperatorPicked == true)
             {
-                
+                var specialOperandNumber = model.CalcNumbers[0];
+
+                switch (model.Operator)
+                {
+                    case '√':
+                        result = _sqrt.PowerOf(specialOperandNumber, 0.5);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (model.OperatorPicked)
+            {
+                var number1 = model.CalcNumbers[0];
+                var number2 = model.CalcNumbers[1];
 
                 switch (model.Operator)
                 {
@@ -149,16 +174,21 @@ namespace Calculator
                         result = _add.Add(number1, number2);
                         TextField.Text += 1;
                         break;
-                    default:
+                    case '-':
+                        result = _remove.Add(number1, number2);
+                        TextField.Text += 1;
                         break;
-                }
-            }
-            else if(model.SpecialOperatorPicked == true)
-            {
-                switch (model.Operator)
-                {
-                    case '√':
-                        result = _sqrt.PowerOf(number1, 0.5);
+                    case '×':
+                        result = _multiplicate.Multiplicate(number1, number2);
+                        TextField.Text += 1;
+                        break;
+                    case '÷':
+                        result = _divide.Multiplicate(number1, number2);
+                        TextField.Text += 1;
+                        break;
+                    case '^':
+                        result = _powerOf.PowerOf(number1, number2);
+                        TextField.Text += 1;
                         break;
                     default:
                         break;
@@ -178,25 +208,55 @@ namespace Calculator
         private void DisplayResult(double result)
         {
             TextField.Text = result.ToString();
+            resetValues();
         }
+
         private List<double> ConvertToDoubleList(string[] numbers)
         {
             List<double> doubleNumbers = new List<double>();
-            numbers.ToList();
-            for (int i = 1; i < numbers.Length - 1; i++)
+            if (model.SpecialOperatorPicked)
             {
-                doubleNumbers[i] = double.Parse(numbers[i]);
+                switch (model.Operator)
+                {
+                    case '√':
+                        doubleNumbers.Add(Convert.ToDouble(numbers[1]));
+                        break;
+                }
+                return doubleNumbers;
             }
-            return doubleNumbers;
+            else
+            {
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    doubleNumbers.Add(Convert.ToDouble(numbers[i]));
+                }
+                return doubleNumbers;
+            }
+
         }
+
         private void SaveList(List<double> numbers)
         {
-            model.CalcNumbers = numbers;
+            model.CalcNumbers.AddRange(numbers);
+        }
+
+        private void setBooleans()
+        {
+            model.CommaUsed = false;
+            model.OperatorPicked = true;
+        }
+
+        private void resetValues()
+        {
+            model.CalcNumbers = new List<double>();
+            model.CommaUsed = false;
+            model.OperatorPicked = false;
+            model.SpecialOperatorPicked = false;
+
         }
     }
-
 }
 
-        
+
 
 
