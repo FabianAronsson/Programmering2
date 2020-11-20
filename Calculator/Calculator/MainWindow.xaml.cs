@@ -228,8 +228,13 @@ namespace Calculator
             {
                 for (int i = 0; i < numbers.Length; i++)
                 {
-                    doubleNumbers.Add(Convert.ToDouble(numbers[i]));
-                }
+                    if(numbers[i] == ",")
+                    {
+                        doubleNumbers.Add(0);
+                    }
+                    else{
+                        doubleNumbers.Add(Convert.ToDouble(numbers[i]));
+                    }                }
                 return doubleNumbers;
             }
 
