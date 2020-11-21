@@ -51,10 +51,11 @@
             <Button Background="#FFF" Grid.Row="3" Grid.Column="0" Content="1" Click="NumberButtonClick"/>
             <Button Background="#FFF" Grid.Row="3" Grid.Column="1" Content="2" Click="NumberButtonClick"/>
             <Button Background="#FFF" Grid.Row="3" Grid.Column="2" Content="3" Click="NumberButtonClick"/>
-            <Button Background="#FFF" Grid.Row="4" Grid.ColumnSpan="2" Content="0" Click="NumberButtonClick"/>
+            <Button Background="#FFF" Grid.Row="4" Grid.Column="1" Content="0" Click="NumberButtonClick"/>
 
             <!--Special Operators-->
             <Button Background="#FFF" Grid.Row="4" Grid.Column="2" Content="." Click="SpecialButtonClick"/>
+            <Button Background="#FFF" Grid.Row="4"  Content="+/−" Click="SpecialButtonClick"/>
             <Button Grid.Row="4" Grid.Column="3" Content="=" Background="#8ab9e0" Click="SpecialButtonClick"/> 
         </Grid>
     </Grid>

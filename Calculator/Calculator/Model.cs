@@ -46,6 +46,21 @@ namespace Calculator
             set { comma = value; }
         }
 
+        private Boolean negativeSignUsed;
+
+        public Boolean isNegativeSignUsed
+        {
+            get { return negativeSignUsed; }
+            set { negativeSignUsed = value; }
+        }
+
+        private Boolean numberUsed;
+
+        public Boolean isNumberUsed
+        {
+            get { return numberUsed; }
+            set { numberUsed = value; }
+        }
 
     }
 }

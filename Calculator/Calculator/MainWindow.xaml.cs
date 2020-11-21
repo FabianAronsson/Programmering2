@@ -41,6 +41,7 @@ namespace Calculator
                     case "8":
                     case "9":
                         TextField.Text += button.Content;
+                        model.isNumberUsed = true;
                         break;
                     default:
                         break;
@@ -67,12 +68,24 @@ namespace Calculator
                             }
                         
                         break;
+                    case "+/−":
+                        if (String.IsNullOrEmpty(TextField.Text))
+                        {
+                            TextField.Text += "-";
+                        }
+                        else if(model.OperatorPicked || model.SpecialOperatorPicked)
+                        {
+                            TextField.Text += "-";
+                        }
+                        break;
                     case "=":
                         if (!String.IsNullOrWhiteSpace(TextField.Text))
                         {
-                            SaveList(ConvertToDoubleList(SplitString(model.Operator)));
-
-                            CalculateResult();
+                            if ((model.OperatorPicked && model.isNumberUsed) || (model.SpecialOperatorPicked && model.isNumberUsed))
+                            {
+                                SaveList(ConvertToDoubleList(SplitString(model.Operator)));
+                                CalculateResult();
+                            }
                         }
                         break;
                 }
@@ -112,34 +125,30 @@ namespace Calculator
                                 case "+":
                                     model.Operator = '+';
                                     TextField.Text += button.Content;
-                                    setBooleans();
                                     break;
                                 case "-":
                                     model.Operator = '-';
                                     TextField.Text += button.Content;
-                                    setBooleans();
                                     break;
                                 case "×":
                                     model.Operator = '×';
                                     TextField.Text += button.Content;
-                                    setBooleans();
                                     break;
                                 case "÷":
                                     model.Operator = '÷';
                                     TextField.Text += button.Content;
-                                    setBooleans();
                                     break;
                                 case "^":
                                     if (!String.IsNullOrEmpty(TextField.Text))
                                     {
                                         model.Operator = '^';
                                         TextField.Text += button.Content;
-                                        setBooleans();
                                     }
                                     break;
                                 default:
                                     break;
                             }
+                            setBooleans();
                         }
                     }
                 }
@@ -149,15 +158,13 @@ namespace Calculator
         private void CalculateResult()
         {
             double result = 0;
-
+            var number1 = model.CalcNumbers[0];
             if (model.SpecialOperatorPicked == true)
             {
-                var specialOperandNumber = model.CalcNumbers[0];
-
                 switch (model.Operator)
                 {
                     case '√':
-                        result = _sqrt.PowerOf(specialOperandNumber, 0.5);
+                        result = _sqrt.PowerOf(number1, 0.5);
                         break;
                     default:
                         break;
@@ -165,7 +172,6 @@ namespace Calculator
             }
             else if (model.OperatorPicked)
             {
-                var number1 = model.CalcNumbers[0];
                 var number2 = model.CalcNumbers[1];
 
                 switch (model.Operator)
@@ -201,14 +207,7 @@ namespace Calculator
         {
             string text = TextField.Text;
             string[] splittedNumers = text.Split(operation);
-            TextField.Text += splittedNumers;
             return splittedNumers;
-        }
-
-        private void DisplayResult(double result)
-        {
-            TextField.Text = result.ToString();
-            resetValues();
         }
 
         private List<double> ConvertToDoubleList(string[] numbers)
@@ -240,6 +239,12 @@ namespace Calculator
 
         }
 
+        private void DisplayResult(double result)
+        {
+            TextField.Text = result.ToString();
+            resetValues();
+        }
+
         private void SaveList(List<double> numbers)
         {
             model.CalcNumbers.AddRange(numbers);
@@ -249,6 +254,7 @@ namespace Calculator
         {
             model.CommaUsed = false;
             model.OperatorPicked = true;
+            model.isNumberUsed = false;
         }
 
         private void resetValues()
