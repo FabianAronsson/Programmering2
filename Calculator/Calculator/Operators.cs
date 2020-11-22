@@ -4,10 +4,14 @@ using System.Text;
 
 namespace Calculator
 {
-    class Operators
+    class Operators //Sample class for categorization
     {
     }
 
+    /// <summary>    
+    /// Essentially each class works by utilizing polymorphism, except the original classes. These are Additon, Multiplication and Exponentiation.
+    /// The reason for this is because the other operations are the inverse of each other. 
+    /// </summary>
     class Multiplication 
     {
         public virtual double Multiplicate(double number1, double number2)
@@ -24,6 +28,7 @@ namespace Calculator
             return (base.Multiplicate(number1, (1 / number2)));
         }
     }
+
     class Addition
     {
         public virtual double Add(double number1, double number2)
@@ -49,6 +54,7 @@ namespace Calculator
             return result;
         }
     }
+
     class SquareRoot : Exponentiation
     {
         public override double PowerOf(double number1, double number2)
