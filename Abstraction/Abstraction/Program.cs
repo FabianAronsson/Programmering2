@@ -29,13 +29,13 @@ namespace Abstraction
             VaquitaOnLeash.Add(new Vaquita());
             VaquitaOnLeash.Add(new VaquitaLeash());
 
-            foreach (Animal item in animals)
+            foreach (Animal animal in animals)
             {
                 item.Move();
                 item.Speak();
             }
 
-            foreach (Accessories item in accessories)
+            foreach (Accessories accessory in accessories)
             {
                 item.Use();
                 item.ThrowAway();
