@@ -6,7 +6,8 @@ namespace Lektion2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Din ålder är " + Console.ReadLine());
+            int[] inputs = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+            Console.WriteLine((inputs[0] - inputs[1]).ToString() + (inputs[0] + inputs[1]).ToString());
         }
     }
 }
