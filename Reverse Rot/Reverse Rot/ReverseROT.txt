@@ -1,0 +1,7 @@
+T = testcases
+N = rotations
+S = String to be encrypted
+
+Take in string -> Add test cases to StringArray-> Get X test case (if == 0 then skip) -> convert to charArray -> Get number of rotations 
+-> Calculate the new position of char -> Repeat for every char -> Reverse charArray -> Convert to String 
+-> Print encrypted String -> Repeat for every test case
